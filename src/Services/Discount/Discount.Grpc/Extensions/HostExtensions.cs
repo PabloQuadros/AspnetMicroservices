@@ -19,8 +19,7 @@ namespace Discount.Grpc.Extensions
                 {
                     logger.LogInformation("Migrating postresql database.");
 
-                    using var connection = new NpgsqlConnection
-                        (configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
+                    using var connection = new NpgsqlConnection (configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
                     connection.Open();
 
                     using var command = new NpgsqlCommand
