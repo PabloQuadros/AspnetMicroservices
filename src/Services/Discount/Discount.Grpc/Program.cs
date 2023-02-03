@@ -21,17 +21,13 @@ builder.WebHost.ConfigureKestrel(options =>
     options.ListenAnyIP(8003, listenOptions => listenOptions.Protocols = HttpProtocols.Http2);
     options.Listen(IPAddress.Any, 80, listenOptions => listenOptions.Protocols = HttpProtocols.Http2);
     options.Listen(IPAddress.Any, 5003, listenOptions => listenOptions.Protocols = HttpProtocols.Http2);
-    // Setup a HTTP/2 endpoint without TLS.
-
-    //options.ListenLocalhost(5003, o => o.Protocols =
-
-    //    HttpProtocols.Http2);
 
 });
 builder.Services.AddGrpc();
 var app = builder.Build();
-app.MigrateDatabase<Program>();
+//app.MigrateDatabase<Program>();
 // Configure the HTTP request pipeline.
+
 app.MapGrpcService<DiscountService>();
 app.MapGet("/", async context  => await context.Response.WriteAsync("Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909"));
 
