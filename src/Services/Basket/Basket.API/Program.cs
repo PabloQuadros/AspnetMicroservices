@@ -24,6 +24,7 @@ internal class Program
 
 
         builder.Services.AddScoped<IBasketRepository, BasketRepository>();
+        builder.Services.AddAutoMapper(typeof(Program));
         builder.Services.AddScoped<DiscountGrpcService>();
         builder.Services.AddMassTransit(config =>
         {
