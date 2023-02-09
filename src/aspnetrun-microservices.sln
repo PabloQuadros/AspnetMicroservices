@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.Infrastructure", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{D4E45B86-B944-4A33-8511-64F07BD2F8D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBusMessages", "BuildingBlocks\EventBusMessages\EventBusMessages.csproj", "{3EEFE515-C3A9-4610-8DB6-39A5D864603D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBusMessages", "BuildingBlocks\EventBusMessages\EventBusMessages.csproj", "{3EEFE515-C3A9-4610-8DB6-39A5D864603D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

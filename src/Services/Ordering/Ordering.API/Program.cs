@@ -29,6 +29,7 @@ builder.Services.AddMassTransit(config =>
         });
     });
 });
+builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
 
