@@ -2,6 +2,7 @@ using Basket.API.GrpcServices;
 using Basket.API.Repositories;
 using Discount.Grpc.Protos;
 using MassTransit;
+using MassTransit.Caching;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using System.Net;
 

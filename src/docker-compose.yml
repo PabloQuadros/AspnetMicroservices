@@ -6,6 +6,7 @@ services:
   
   basketdb:
     image: redis:alpine
+    container_name: basketdb
   
   discountdb:
     image: postgres
