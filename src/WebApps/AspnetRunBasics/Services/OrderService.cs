@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System;
 using AspnetRunBasics.Models;
+using AspnetRunBasics.Extensions;
 
 namespace AspnetRunBasics.Services
 {
