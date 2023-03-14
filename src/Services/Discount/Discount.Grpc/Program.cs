@@ -1,7 +1,9 @@
+using Common.Logging;
 using Discount.Grpc.Extensions;
 using Discount.Grpc.Repositories;
 using Discount.Grpc.Services;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Serilog;
 using System.Net;
 using System.Reflection.PortableExecutable;
 //using Discount.Grpc.Services;
@@ -12,7 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 // For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
 
 // Add services to the container.
-;
+builder.Host.UseSerilog(SeriLogger.Configure);
+
 builder.Services.AddScoped<IDiscountRepository, DiscountRepository>();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.WebHost.ConfigureKestrel(options =>
