@@ -1,9 +1,11 @@
 using Basket.API.GrpcServices;
 using Basket.API.Repositories;
+using Common.Logging;
 using Discount.Grpc.Protos;
 using MassTransit;
 using MassTransit.Caching;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Serilog;
 using System.Net;
 
 internal class Program
@@ -16,6 +18,7 @@ internal class Program
 
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+        builder.Host.UseSerilog(SeriLogger.Configure);
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
         builder.Services.AddStackExchangeRedisCache(options =>
